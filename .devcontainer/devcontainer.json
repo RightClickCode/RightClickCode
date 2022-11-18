@@ -4,6 +4,11 @@
 	"features": {
 		"ghcr.io/devcontainers/features/git-lfs:1": {}
 	},
+	"customizations": {
+		"vscode": {
+		  "extensions": ["nrwl.angular-console"]
+		}
+	  },
 	
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [],
