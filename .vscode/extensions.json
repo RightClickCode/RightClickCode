@@ -2,6 +2,8 @@
   "recommendations": [
     "nrwl.angular-console",
     "firsttris.vscode-jest-runner",
-    "dbaeumer.vscode-eslint"
+    "dbaeumer.vscode-eslint",
+    "eamodio.gitlens",
+    "streetsidesoftware.code-spell-checker"
   ]
 }

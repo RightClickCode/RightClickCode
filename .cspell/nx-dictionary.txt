@@ -1,0 +1,3 @@
+# NX Dictionary Words
+nrwl
+cacheable

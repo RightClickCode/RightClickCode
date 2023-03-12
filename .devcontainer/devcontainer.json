@@ -6,7 +6,11 @@
 	},
 	"customizations": {
 		"vscode": {
-		  "extensions": ["nrwl.angular-console"]
+		  "extensions": [
+			"nrwl.angular-console",
+			"firsttris.vscode-jest-runner",
+			"streetsidesoftware.code-spell-checker"
+		]
 		}
 	  },
 	
@@ -14,7 +18,7 @@
 	// "forwardPorts": [],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	// "postCreateCommand": "yarn install",
+	"postCreateCommand": "pnpm install",
 
 	// Set `remoteUser` to `root` to connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
 	"remoteUser": "node"
