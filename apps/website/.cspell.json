@@ -1,0 +1,15 @@
+{
+    "$schema": "https://raw.githubusercontent.com/streetsidesoftware/cspell/main/cspell.schema.json",
+    "version": "0.2",
+    "import":["../../.cspell.json"],
+    "dictionaryDefinitions": [
+      {
+        "name": "website",
+        "path": ".cspell/website-dictionary.txt",
+        "addWords": true
+      }
+    ],
+    "dictionaries": ["website"],
+    "ignorePaths": ["**/.cspell"]
+  }
+  
