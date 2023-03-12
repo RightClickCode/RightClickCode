@@ -58,11 +58,11 @@
         "lintFilePatterns": ["apps/website/**/*.{ts,tsx,js,jsx}"]
       }
     },
-    "spellcheck":{
+    "spellcheck": {
       "executor": "nx:run-commands",
       "options": {
         "cwd": "apps/website",
-        "command":"cspell lint \"**\" --color"
+        "command": "cspell lint \"**\" --color"
       }
     }
   },
