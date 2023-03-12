@@ -1,0 +1,28 @@
+{
+  "$schema": "https://raw.githubusercontent.com/streetsidesoftware/cspell/main/cspell.schema.json",
+  "version": "0.2",
+  "dictionaryDefinitions": [
+    {
+      "name": "right-click-code",
+      "path": ".cspell/right-click-code-dictionary.txt",
+      "addWords": true
+    },
+    {
+      "name": "nx",
+      "path": ".cspell/nx-dictionary.txt"
+    },
+    {
+      "name": "npm-package-names",
+      "path": ".cspell/npm-package-name-dictionary.txt",
+      "addWords": true
+    }
+  ],
+  "dictionaries": ["right-click-code", "nx", "npm-package-names"],
+  "overrides": [
+    {
+      "filename": "**/package.json",
+      "dictionaries": ["npm-package-names"]
+    }
+  ],
+  "ignorePaths": ["node_modules", "pnpm-lock.yaml", "**/.cspell"]
+}
