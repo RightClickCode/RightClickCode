@@ -65,7 +65,7 @@
         "command": "cspell lint \"**\" --color"
       }
     },
-    "typescript-check":{
+    "typescript-check": {
       "executor": "nx:run-commands",
       "options": {
         "cwd": "apps/website",
