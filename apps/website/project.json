@@ -64,6 +64,13 @@
         "cwd": "apps/website",
         "command": "cspell lint \"**\" --color"
       }
+    },
+    "typescript-check": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "apps/website",
+        "command": "tsc -p tsconfig.json"
+      }
     }
   },
   "tags": []
