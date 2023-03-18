@@ -1,3 +1,4 @@
 # NX Dictionary Words
-nrwl
 cacheable
+nrwl
+tsbuildinfo

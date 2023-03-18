@@ -24,5 +24,10 @@
       "dictionaries": ["npm-package-names"]
     }
   ],
-  "ignorePaths": ["node_modules", "pnpm-lock.yaml", "**/.cspell"]
+  "ignorePaths": [
+    "node_modules",
+    "pnpm-lock.yaml",
+    "**/.cspell",
+    "**/tsconfig.tsbuildinfo"
+  ]
 }
