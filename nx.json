@@ -36,7 +36,7 @@
     ],
     "sharedGlobals": [
       "{workspaceRoot}/babel.config.json",
-      "{workspaceRoot}.github/workflows/ci.yml"
+      "{workspaceRoot}/.github/workflows/ci.yml"
     ]
   },
   "generators": {
