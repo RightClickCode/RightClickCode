@@ -5,7 +5,7 @@
     "default": {
       "runner": "@nrwl/nx-cloud",
       "options": {
-        "cacheableOperations": ["build", "lint", "test", "e2e"],
+        "cacheableOperations": ["build", "lint", "test", "e2e", "spellcheck"],
         "accessToken": "Mzc5YzU5NGEtZGMwMy00NmM5LWE2Y2MtNWFmZjI4YTliNDhjfHJlYWQtd3JpdGU="
       }
     }
@@ -34,7 +34,10 @@
       "!{projectRoot}/jest.config.[jt]s",
       "!{projectRoot}/.eslintrc.json"
     ],
-    "sharedGlobals": ["{workspaceRoot}/babel.config.json"]
+    "sharedGlobals": [
+      "{workspaceRoot}/babel.config.json",
+      "{workspaceRoot}/.github/workflows/ci.yml"
+    ]
   },
   "generators": {
     "@nrwl/react": {
