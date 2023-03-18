@@ -5,7 +5,14 @@
     "default": {
       "runner": "@nrwl/nx-cloud",
       "options": {
-        "cacheableOperations": ["build", "lint", "test", "e2e", "spellcheck"],
+        "cacheableOperations": [
+          "build",
+          "lint",
+          "test",
+          "e2e",
+          "spellcheck",
+          "typescript-check"
+        ],
         "accessToken": "Mzc5YzU5NGEtZGMwMy00NmM5LWE2Y2MtNWFmZjI4YTliNDhjfHJlYWQtd3JpdGU="
       }
     }
