@@ -34,7 +34,10 @@
       "!{projectRoot}/jest.config.[jt]s",
       "!{projectRoot}/.eslintrc.json"
     ],
-    "sharedGlobals": ["{workspaceRoot}/babel.config.json"]
+    "sharedGlobals": [
+      "{workspaceRoot}/babel.config.json",
+      ".github/workflows/ci.yml"
+    ]
   },
   "generators": {
     "@nrwl/react": {
