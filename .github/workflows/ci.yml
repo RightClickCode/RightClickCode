@@ -23,6 +23,7 @@ jobs:
         pnpm exec nx affected --target=typescript-check --parallel=3
         pnpm exec nx affected --target=test --parallel=3 --ci --code-coverage
         pnpm exec nx affected --target=build --parallel=3
+        pnpm exec nx affected --target=e2e --parallel=3
 
   agents:
     name: Nx Cloud - Agents
