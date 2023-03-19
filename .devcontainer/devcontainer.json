@@ -9,7 +9,8 @@
       "extensions": [
         "nrwl.angular-console",
         "firsttris.vscode-jest-runner",
-        "streetsidesoftware.code-spell-checker"
+        "streetsidesoftware.code-spell-checker",
+        "eamodio.gitlens"
       ]
     }
   },
