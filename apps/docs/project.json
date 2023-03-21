@@ -9,51 +9,38 @@
       "executor": "nx:run-commands",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "cwd": "apps/docs",
-        "command": "docusaurus build",
+        "command": "docusaurus build apps/docs --out-dir ../../dist/apps/docs",
         "outputPath": "dist/apps/docs"
       }
     },
     "serve": {
       "executor": "nx:run-commands",
       "options": {
-        "cwd": "apps/docs",
-        "command": "docusaurus serve"
-      }
-    },
-    "swizzle": {
-      "executor": "nx:run-commands",
-      "options": {
-        "cwd": "apps/docs",
-        "command": "docusaurus swizzle"
+        "command": "docusaurus serve apps/docs --dir ../../dist/apps/docs"
       }
     },
     "deploy": {
       "executor": "nx:run-commands",
       "options": {
-        "cwd": "apps/docs",
-        "command": "docusaurus deploy"
+        "command": "docusaurus deploy apps/docs --out-dir ../../apps/docs"
       }
     },
     "clear": {
       "executor": "nx:run-commands",
       "options": {
-        "cwd": "apps/docs",
-        "command": "docusaurus clear"
+        "command": "docusaurus clear apps/docs"
       }
     },
     "write-translations": {
       "executor": "nx:run-commands",
       "options": {
-        "cwd": "apps/docs",
-        "command": "docusaurus write-translations"
+        "command": "docusaurus write-translations apps/docs"
       }
     },
     "write-heading-ids": {
       "executor": "nx:run-commands",
       "options": {
-        "cwd": "apps/docs",
-        "command": "docusaurus write-heading-ids"
+        "command": "docusaurus write-heading-ids apps/docs"
       }
     },
     "lint": {
