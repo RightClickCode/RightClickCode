@@ -12,7 +12,7 @@ env:
 jobs:
   main:
     name: Nx Cloud - Main Job
-    uses: ./nx-cloud-main.yml
+    uses: ./.github/workflows/nx-cloud-main.yml
     with:
       number-of-agents: 3
       init-commands: |
