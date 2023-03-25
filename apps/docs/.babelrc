@@ -1,0 +1,6 @@
+{
+  "presets": [
+    "@nrwl/js/babel",
+    "@docusaurus/core/lib/babel/preset"
+  ]
+}

@@ -1,4 +1,5 @@
 # NPM Package Name Dictionary Words
+clsx
 nrwl
 pnpm
 svgr

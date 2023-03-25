@@ -1,8 +1,27 @@
+## Dependencies ##
 node_modules
+
+## Production ##
 /dist/
+/build/
 
 ## Next.js ##
 .next
 
-# tsc #
+## Docusaurus ##
+.docusaurus
+
+## tsc ##
 **/tsconfig.tsbuildinfo
+
+## Generated files ##
+.cache-loader
+
+## Misc ##
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+npm-debug.log*
