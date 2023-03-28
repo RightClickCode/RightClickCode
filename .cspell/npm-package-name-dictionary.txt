@@ -1,5 +1,6 @@
 # NPM Package Name Dictionary Words
 clsx
+frontmatter
 nrwl
 pnpm
 svgr

@@ -30,6 +30,13 @@
       "files": ["*.js", "*.jsx"],
       "extends": ["plugin:@nrwl/nx/javascript"],
       "rules": {}
+    },
+    {
+      "files": ["*.md", "*.mdx"],
+      "extends": ["plugin:mdx/recommended"],
+      "settings": {
+        "mdx/code-blocks": true
+      }
     }
   ]
 }

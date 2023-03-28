@@ -15,9 +15,19 @@
       "name": "npm-package-names",
       "path": ".cspell/npm-package-name-dictionary.txt",
       "addWords": true
+    },
+    {
+      "name": "vscode-plugin-names",
+      "path": ".cspell/vscode-plugin-name-dictionary.txt",
+      "addWords": true
     }
   ],
-  "dictionaries": ["right-click-code", "nx", "npm-package-names"],
+  "dictionaries": [
+    "right-click-code",
+    "nx",
+    "npm-package-names",
+    "vscode-plugin-names"
+  ],
   "overrides": [
     {
       "filename": "**/package.json",

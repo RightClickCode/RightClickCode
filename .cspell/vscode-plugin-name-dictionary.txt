@@ -1,0 +1,5 @@
+# VSCode Plugin Name Dictionary Words
+eamodio
+firsttris
+nrwl
+unifiedjs
