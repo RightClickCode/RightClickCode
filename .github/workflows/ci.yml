@@ -12,7 +12,7 @@ env:
 jobs:
   main:
     name: Nx Cloud - Main Job
-    uses: ./.github/workflows/nx-cloud-main.yml
+    uses: nrwl/ci/.github/workflows/nx-cloud-main.yml@v0.8
     with:
       pnpm-version: 7.28.0
       number-of-agents: 3
