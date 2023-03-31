@@ -10,7 +10,8 @@
         "nrwl.angular-console",
         "firsttris.vscode-jest-runner",
         "streetsidesoftware.code-spell-checker",
-        "eamodio.gitlens"
+        "eamodio.gitlens",
+        "unifiedjs.vscode-mdx"
       ]
     }
   },

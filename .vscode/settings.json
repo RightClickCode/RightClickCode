@@ -1,10 +1,14 @@
 {
-  "cSpell.customDictionaries": {
-    "custom-dictionary-workspace": {
-      "name": "custom-dictionary-workspace",
-      "path": "${workspaceFolder:RightClickCode}/.cspell/custom-dictionary-workspace.txt",
-      "addWords": true,
-      "scope": "workspace"
-    }
-  }
+  "gitlens.showWhatsNewAfterUpgrades": false,
+  "eslint.options": {
+    "extensions": [".js", ".jsx", ".md", ".mdx", ".ts", ".tsx"]
+  },
+  "eslint.validate": [
+    "markdown",
+    "mdx",
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ]
 }
