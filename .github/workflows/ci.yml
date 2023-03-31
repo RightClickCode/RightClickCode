@@ -14,6 +14,7 @@ jobs:
     name: Nx Cloud - Main Job
     uses: ./.github/workflows/nx-cloud-main.yml
     with:
+      pnpm-version: 7.28.0
       number-of-agents: 3
       init-commands: |
         pnpm exec nx-cloud start-ci-run --stop-agents-after="build" --agent-count=3
