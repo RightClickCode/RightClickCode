@@ -16,7 +16,6 @@ jobs:
     with:
       pnpm-version: 7.28.0
       number-of-agents: 3
-      pnpm-version: 7.28.0
       init-commands: |
         pnpm exec nx-cloud start-ci-run --stop-agents-after="build" --agent-count=3
       parallel-commands: |
