@@ -1,0 +1,20 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "version": 2,
+  "cli": "nx",
+  "title": "Spellcheck executor",
+  "description": "Executor for spellchecking code with cspell",
+  "type": "object",
+  "properties": {
+    "cspellConfig": {
+      "type" : "string",
+      "description": "Path to the cspell config file"
+    },
+    "disableColor":{
+      "type": "boolean",
+      "description": "Disable the default forced color in output logs"
+    }
+
+  },
+  "required": []
+}
