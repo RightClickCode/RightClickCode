@@ -69,12 +69,12 @@ on:
         type: number
 
 env:
-NX_CLOUD_DISTRIBUTED_EXECUTION: true
-NX_CLOUD_DISTRIBUTED_EXECUTION_AGENT_COUNT: ${{ inputs.number-of-agents }}
-NX_BRANCH: ${{ github.event.number || github.ref_name }}
-NX_CLOUD_ACCESS_TOKEN: ${{ secrets.NX_CLOUD_ACCESS_TOKEN }}
-NX_CLOUD_AUTH_TOKEN: ${{ secrets.NX_CLOUD_AUTH_TOKEN }}
-NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+  NX_CLOUD_DISTRIBUTED_EXECUTION: true
+  NX_CLOUD_DISTRIBUTED_EXECUTION_AGENT_COUNT: ${{ inputs.number-of-agents }}
+  NX_BRANCH: ${{ github.event.number || github.ref_name }}
+  NX_CLOUD_ACCESS_TOKEN: ${{ secrets.NX_CLOUD_ACCESS_TOKEN }}
+  NX_CLOUD_AUTH_TOKEN: ${{ secrets.NX_CLOUD_AUTH_TOKEN }}
+  NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
 jobs:
   main:
@@ -86,10 +86,9 @@ jobs:
     timeout-minutes: ${{ inputs.timeout || 360 }}
     defaults:
       run:
-        working-directory:
-          ${{ inputs.working-directory || github.workspace }}
-          # Specify shell to help normalize across different operating systems
-    shell: bash
+        working-directory: ${{ inputs.working-directory || github.workspace }}
+        # Specify shell to help normalize across different operating systems
+        shell: bash
     steps:
       - uses: actions/checkout@v3
         name: Checkout [Pull Request]
@@ -196,10 +195,10 @@ jobs:
         if: steps.package_manager.outputs.name == 'yarn' && !startsWith(steps.versions.outputs.yarn_version, '1.')
         uses: actions/cache@v3
         with:
-        path: ${{ steps.yarn-berry-cache-dir-path.outputs.dir }}
-        key: ${{ runner.os }}-node-${{ steps.versions.outputs.node_version }}-yarn-berry-${{ hashFiles('**/yarn.lock') }}
-        restore-keys: |
-          ${{ runner.os }}-node-${{ steps.versions.outputs.node_version }}-yarn-berry-
+          path: ${{ steps.yarn-berry-cache-dir-path.outputs.dir }}
+          key: ${{ runner.os }}-node-${{ steps.versions.outputs.node_version }}-yarn-berry-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-node-${{ steps.versions.outputs.node_version }}-yarn-berry-
 
       - name: Process environment-variables
         if: ${{ inputs.environment-variables != '' }}
@@ -255,13 +254,13 @@ jobs:
             else
               echo "Running yarn install --immutable"
               yarn install --immutable
-          fi
+            fi
           elif [ "${{ steps.package_manager.outputs.name == 'pnpm' }}" == "true" ]; then
             echo "Running pnpm install --frozen-lockfile"
             pnpm install --frozen-lockfile
-          else 
+          else
             echo "Running npm ci"
-            npm ci  
+            npm ci
           fi
 
       # An unfortunate side-effect of the way reusable workflows work is that by the time they are pulled into the "caller"
@@ -292,8 +291,8 @@ jobs:
 
               # All the invoked commands must have exited with code zero.
               exit 0
-              `;
-              writeFileSync('./.github/workflows/run-commands-in-parallel.sh', runCommandsInParallelScript);
+            `;
+            writeFileSync('./.github/workflows/run-commands-in-parallel.sh', runCommandsInParallelScript);
 
       - name: Prepare command utils
         # We need to escape the workspace path to be consistent cross-platform: https://github.com/actions/runner/issues/1066
@@ -336,11 +335,11 @@ jobs:
 
             const formattedArrayOfCommands = [
               ...parallelCommandsOnMain.map(s => s
-              .split(' && ')
-              .map(s => `NX_CLOUD_DISTRIBUTED_EXECUTION=false ${s}`)
-              .join(' && ')
-            ),
-            ...parallelCommandsOnAgents,
+                .split(' && ')
+                .map(s => `NX_CLOUD_DISTRIBUTED_EXECUTION=false ${s}`)
+                .join(' && ')
+              ),
+              ...parallelCommandsOnAgents,
             ];
 
             const stringifiedEncodedArrayOfCommands = JSON.stringify(formattedArrayOfCommands)
