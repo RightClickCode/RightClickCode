@@ -64,14 +64,17 @@ on:
       working-directory:
         required: false
         type: string
+      timeout:
+        required: false
+        type: number
 
 env:
-  NX_CLOUD_DISTRIBUTED_EXECUTION: true
-  NX_CLOUD_DISTRIBUTED_EXECUTION_AGENT_COUNT: ${{ inputs.number-of-agents }}
-  NX_BRANCH: ${{ github.event.number || github.ref_name }}
-  NX_CLOUD_ACCESS_TOKEN: ${{ secrets.NX_CLOUD_ACCESS_TOKEN }}
-  NX_CLOUD_AUTH_TOKEN: ${{ secrets.NX_CLOUD_AUTH_TOKEN }}
-  NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+NX_CLOUD_DISTRIBUTED_EXECUTION: true
+NX_CLOUD_DISTRIBUTED_EXECUTION_AGENT_COUNT: ${{ inputs.number-of-agents }}
+NX_BRANCH: ${{ github.event.number || github.ref_name }}
+NX_CLOUD_ACCESS_TOKEN: ${{ secrets.NX_CLOUD_ACCESS_TOKEN }}
+NX_CLOUD_AUTH_TOKEN: ${{ secrets.NX_CLOUD_AUTH_TOKEN }}
+NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
 jobs:
   main:
@@ -79,11 +82,14 @@ jobs:
     # The name of the job which will invoke this one is expected to be "Nx Cloud - Main Job", and whatever we call this will be appended
     # to that one after a forward slash, so we keep this one intentionally short to produce "Nx Cloud - Main Job / Run" in the Github UI
     name: Run
+    # GitHub's default timeout is 360 minutes
+    timeout-minutes: ${{ inputs.timeout || 360 }}
     defaults:
       run:
-        working-directory: ${{ inputs.working-directory || github.workspace }}
-        # Specify shell to help normalize across different operating systems
-        shell: bash
+        working-directory:
+          ${{ inputs.working-directory || github.workspace }}
+          # Specify shell to help normalize across different operating systems
+    shell: bash
     steps:
       - uses: actions/checkout@v3
         name: Checkout [Pull Request]
@@ -120,11 +126,12 @@ jobs:
           node-version: "${{ inputs.node-version }}"
           npm-version: "${{ inputs.npm-version }}"
           yarn-version: "${{ inputs.yarn-version }}"
+          package-json-path: "${{ inputs.working-directory || github.workspace }}/package.json"
 
       # Install pnpm with exact version provided by consumer or fallback to latest
       - name: Install PNPM
         if: steps.package_manager.outputs.name == 'pnpm'
-        uses: pnpm/action-setup@v2.2.2
+        uses: pnpm/action-setup@v2
         with:
           version: ${{ inputs.pnpm-version || 'latest' }}
 
@@ -189,10 +196,10 @@ jobs:
         if: steps.package_manager.outputs.name == 'yarn' && !startsWith(steps.versions.outputs.yarn_version, '1.')
         uses: actions/cache@v3
         with:
-          path: ${{ steps.yarn-berry-cache-dir-path.outputs.dir }}
-          key: ${{ runner.os }}-node-${{ steps.versions.outputs.node_version }}-yarn-berry-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-node-${{ steps.versions.outputs.node_version }}-yarn-berry-
+        path: ${{ steps.yarn-berry-cache-dir-path.outputs.dir }}
+        key: ${{ runner.os }}-node-${{ steps.versions.outputs.node_version }}-yarn-berry-${{ hashFiles('**/yarn.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-node-${{ steps.versions.outputs.node_version }}-yarn-berry-
 
       - name: Process environment-variables
         if: ${{ inputs.environment-variables != '' }}
@@ -248,13 +255,13 @@ jobs:
             else
               echo "Running yarn install --immutable"
               yarn install --immutable
-            fi
+          fi
           elif [ "${{ steps.package_manager.outputs.name == 'pnpm' }}" == "true" ]; then
             echo "Running pnpm install --frozen-lockfile"
             pnpm install --frozen-lockfile
-          else
+          else 
             echo "Running npm ci"
-            npm ci
+            npm ci  
           fi
 
       # An unfortunate side-effect of the way reusable workflows work is that by the time they are pulled into the "caller"
@@ -285,8 +292,8 @@ jobs:
 
               # All the invoked commands must have exited with code zero.
               exit 0
-            `;
-            writeFileSync('./.github/workflows/run-commands-in-parallel.sh', runCommandsInParallelScript);
+              `;
+              writeFileSync('./.github/workflows/run-commands-in-parallel.sh', runCommandsInParallelScript);
 
       - name: Prepare command utils
         # We need to escape the workspace path to be consistent cross-platform: https://github.com/actions/runner/issues/1066
@@ -329,11 +336,11 @@ jobs:
 
             const formattedArrayOfCommands = [
               ...parallelCommandsOnMain.map(s => s
-                .split(' && ')
-                .map(s => `NX_CLOUD_DISTRIBUTED_EXECUTION=false ${s}`)
-                .join(' && ')
-              ),
-              ...parallelCommandsOnAgents,
+              .split(' && ')
+              .map(s => `NX_CLOUD_DISTRIBUTED_EXECUTION=false ${s}`)
+              .join(' && ')
+            ),
+            ...parallelCommandsOnAgents,
             ];
 
             const stringifiedEncodedArrayOfCommands = JSON.stringify(formattedArrayOfCommands)
