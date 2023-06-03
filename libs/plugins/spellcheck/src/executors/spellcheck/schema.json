@@ -7,14 +7,13 @@
   "type": "object",
   "properties": {
     "cspellConfig": {
-      "type" : "string",
+      "type": "string",
       "description": "Path to the cspell config file"
     },
-    "disableColor":{
+    "disableColor": {
       "type": "boolean",
       "description": "Disable the default forced color in output logs"
     }
-
   },
   "required": []
 }

@@ -1,4 +1,4 @@
 export interface SpellcheckExecutorSchema {
-    cspellConfig?: string;
-    disableColor?: boolean;
+  cspellConfig?: string;
+  disableColor?: boolean;
 }
