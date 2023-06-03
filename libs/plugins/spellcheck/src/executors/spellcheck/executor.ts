@@ -5,23 +5,23 @@ import { ExecutorContext } from "@nrwl/devkit";
 
 export default async function runExecutor(
   options: SpellcheckExecutorSchema,
-  context: ExecutorContext & {projectName: string}
-  ) {
+  context: ExecutorContext & { projectName: string }
+) {
   const cwd = getCwdForCspell(context);
   const args = argsFromOptions(options);
 
-  const command= ['cspell', 'lint', '"**"' ].concat(args).join(' ');
-  execSync('pwd && cspell --help', {stdio: 'inherit', cwd});
-  return { success: true};
+  const command = ["cspell", "lint", `"${cwd}/**"`].concat(args).join(" ");
+  execSync(command, { stdio: "inherit" });
+  return { success: true };
 }
 
-function argsFromOptions(options: SpellcheckExecutorSchema): string [] {
-  const args = [ ];
-  if (options.cspellConfig){
-    args.push('-c', options.cspellConfig);
+function argsFromOptions(options: SpellcheckExecutorSchema): string[] {
+  const args = [];
+  if (options.cspellConfig) {
+    args.push("-c", options.cspellConfig);
   }
-  if (!options.disableColor){
-    args.push('--color');
+  if (!options.disableColor) {
+    args.push("--color");
   }
   return args;
 }

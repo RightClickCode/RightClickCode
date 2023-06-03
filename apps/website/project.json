@@ -59,7 +59,10 @@
       }
     },
     "spellcheck": {
-      "executor": "@"
+      "executor": "@right-click-code/nx-spellcheck:spellcheck",
+      "options": {
+        "cspellConfig": "apps/website/.cspell.json"
+      }
     },
     "typescript-check": {
       "executor": "nx:run-commands",
