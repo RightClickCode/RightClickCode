@@ -54,11 +54,11 @@ on:
       artifacts-path:
         required: false
         type: string
-        default: ""
+        default: ''
       artifacts-name:
         required: false
         type: string
-        default: "nx-main-artifacts"
+        default: 'nx-main-artifacts'
       # We needed this input in order to be able to configure out integration tests for this repo, it is not documented
       # so as to not cause confusion/add noise, but technically any consumer of the workflow can use it if they want to.
       working-directory:
@@ -122,10 +122,10 @@ jobs:
       # Set node/npm/yarn versions using volta, with optional overrides provided by the consumer
       - uses: volta-cli/action@v4
         with:
-          node-version: "${{ inputs.node-version }}"
-          npm-version: "${{ inputs.npm-version }}"
-          yarn-version: "${{ inputs.yarn-version }}"
-          package-json-path: "${{ inputs.working-directory || github.workspace }}/package.json"
+          node-version: '${{ inputs.node-version }}'
+          npm-version: '${{ inputs.npm-version }}'
+          yarn-version: '${{ inputs.yarn-version }}'
+          package-json-path: '${{ inputs.working-directory || github.workspace }}/package.json'
 
       # Install pnpm with exact version provided by consumer or fallback to latest
       - name: Install PNPM
