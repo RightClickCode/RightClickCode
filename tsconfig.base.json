@@ -15,9 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@right-click-code/nx-spellcheck": [
-        "libs/plugins/spellcheck/src/index.ts"
-      ]
+      "@right-click/nx-spellcheck": ["libs/plugins/spellcheck/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

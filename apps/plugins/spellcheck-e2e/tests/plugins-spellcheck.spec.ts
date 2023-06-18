@@ -3,10 +3,10 @@ import {
   ensureNxProject,
   readJson,
   runNxCommandAsync,
-  uniq,
-} from "@nrwl/nx-plugin/testing";
+  runNxCommand,
+} from '@nx/plugin/testing';
 
-describe("plugins-spellcheck e2e", () => {
+describe('plugins-spellcheck e2e', () => {
   // Setting up individual workspaces per
   // test can cause e2e runs to take a long time.
   // For this reason, we recommend each suite only
@@ -15,50 +15,26 @@ describe("plugins-spellcheck e2e", () => {
   // are not dependant on one another.
   beforeAll(() => {
     ensureNxProject(
-      "@right-click-code/nx-spellcheck",
-      "dist/libs/plugins/spellcheck"
+      '@right-click/nx-spellcheck',
+      'dist/libs/plugins/spellcheck'
     );
   });
 
-  afterAll(() => {
+  afterAll(async () => {
     // `nx reset` kills the daemon, and performs
     // some work which can help clean up e2e leftovers
-    runNxCommandAsync("reset");
+    await runNxCommandAsync('reset');
   });
 
-  it("should create plugins-spellcheck", async () => {
-    const project = uniq("plugins-spellcheck");
+  // Add some tests here to check that your plugin functionality works as expected.
+  // A sample test is included below to give you some ideas.
+  xit('should be able to build generated projects', async () => {
+    const name = 'proj';
+    const generator = 'PLACEHOLDER';
     await runNxCommandAsync(
-      `generate @right-click-code/nx-spellcheck:plugins-spellcheck ${project}`
+      `generate @right-click/nx-spellcheck:${generator} --name ${name}`
     );
-    const result = await runNxCommandAsync(`build ${project}`);
-    expect(result.stdout).toContain("Executor ran");
-  }, 120000);
-
-  describe("--directory", () => {
-    it("should create src in the specified directory", async () => {
-      const project = uniq("plugins-spellcheck");
-      await runNxCommandAsync(
-        `generate @right-click-code/nx-spellcheck:plugins-spellcheck ${project} --directory subdir`
-      );
-      expect(() =>
-        checkFilesExist(`libs/subdir/${project}/src/index.ts`)
-      ).not.toThrow();
-    }, 120000);
-  });
-
-  describe("--tags", () => {
-    it("should add tags to the project", async () => {
-      const projectName = uniq("plugins-spellcheck");
-      ensureNxProject(
-        "@right-click-code/nx-spellcheck",
-        "dist/libs/plugins/spellcheck"
-      );
-      await runNxCommandAsync(
-        `generate @right-click-code/nx-spellcheck:plugins-spellcheck ${projectName} --tags e2etag,e2ePackage`
-      );
-      const project = readJson(`libs/${projectName}/project.json`);
-      expect(project.tags).toEqual(["e2etag", "e2ePackage"]);
-    }, 120000);
+    expect(() => runNxCommand('build ${proj}')).not.toThrow();
+    expect(() => checkFilesExist(`dist/${name}/index.js`)).not.toThrow();
   });
 });

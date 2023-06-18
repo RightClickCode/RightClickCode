@@ -5,7 +5,7 @@
   "projectType": "library",
   "targets": {
     "build": {
-      "executor": "@nrwl/js:tsc",
+      "executor": "@nx/js:tsc",
       "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/libs/plugins/spellcheck",
@@ -36,20 +36,24 @@
         ]
       }
     },
+    "publish": {
+      "command": "node tools/scripts/publish.mjs plugins-spellcheck {args.ver} {args.tag}",
+      "dependsOn": ["build"]
+    },
     "lint": {
-      "executor": "@nrwl/linter:eslint",
+      "executor": "@nx/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
         "lintFilePatterns": [
           "libs/plugins/spellcheck/**/*.ts",
-          "libs/plugins/spellcheck/generators.json",
+          "libs/plugins/spellcheck/package.json",
           "libs/plugins/spellcheck/executors.json",
-          "libs/plugins/spellcheck/package.json"
+          "libs/plugins/spellcheck/generators.json"
         ]
       }
     },
     "test": {
-      "executor": "@nrwl/jest:jest",
+      "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
         "jestConfig": "libs/plugins/spellcheck/jest.config.ts",

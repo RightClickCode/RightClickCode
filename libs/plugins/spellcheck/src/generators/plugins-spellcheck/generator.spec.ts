@@ -1,20 +1,20 @@
-import { createTreeWithEmptyWorkspace } from "@nrwl/devkit/testing";
-import { Tree, readProjectConfiguration } from "@nrwl/devkit";
+import { createTreeWithEmptyWorkspace } from '@nx/devkit/testing';
+import { Tree, readProjectConfiguration } from '@nx/devkit';
 
-import generator from "./generator";
-import { PluginsSpellcheckGeneratorSchema } from "./schema";
+import { pluginsSpellcheckGenerator } from './generator';
+import { PluginsSpellcheckGeneratorSchema } from './schema';
 
-describe("plugins-spellcheck generator", () => {
-  let appTree: Tree;
-  const options: PluginsSpellcheckGeneratorSchema = { name: "test" };
+describe('plugins-spellcheck generator', () => {
+  let tree: Tree;
+  const options: PluginsSpellcheckGeneratorSchema = { name: 'test' };
 
   beforeEach(() => {
-    appTree = createTreeWithEmptyWorkspace({ layout: "apps-libs" });
+    tree = createTreeWithEmptyWorkspace();
   });
 
-  it("should run successfully", async () => {
-    await generator(appTree, options);
-    const config = readProjectConfiguration(appTree, "test");
+  it('should run successfully', async () => {
+    await pluginsSpellcheckGenerator(tree, options);
+    const config = readProjectConfiguration(tree, 'test');
     expect(config).toBeDefined();
   });
 });

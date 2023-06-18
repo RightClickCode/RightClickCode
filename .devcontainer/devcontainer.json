@@ -11,7 +11,8 @@
         "firsttris.vscode-jest-runner",
         "streetsidesoftware.code-spell-checker",
         "eamodio.gitlens",
-        "unifiedjs.vscode-mdx"
+        "unifiedjs.vscode-mdx",
+        "esbenp.prettier-vscode"
       ]
     }
   },
