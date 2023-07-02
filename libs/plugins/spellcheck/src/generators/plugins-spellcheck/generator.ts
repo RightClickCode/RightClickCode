@@ -3,9 +3,9 @@ import {
   formatFiles,
   generateFiles,
   Tree,
-} from '@nx/devkit';
-import * as path from 'path';
-import { PluginsSpellcheckGeneratorSchema } from './schema';
+} from "@nx/devkit";
+import * as path from "path";
+import { PluginsSpellcheckGeneratorSchema } from "./schema";
 
 export async function pluginsSpellcheckGenerator(
   tree: Tree,
@@ -14,11 +14,11 @@ export async function pluginsSpellcheckGenerator(
   const projectRoot = `libs/${options.name}`;
   addProjectConfiguration(tree, options.name, {
     root: projectRoot,
-    projectType: 'library',
+    projectType: "library",
     sourceRoot: `${projectRoot}/src`,
     targets: {},
   });
-  generateFiles(tree, path.join(__dirname, 'files'), projectRoot, options);
+  generateFiles(tree, path.join(__dirname, "files"), projectRoot, options);
   await formatFiles(tree);
 }
 

@@ -1,21 +1,21 @@
-import { SpellcheckExecutorSchema } from './schema';
-import executor from './executor';
-jest.mock('child_process', () => ({
+import { SpellcheckExecutorSchema } from "./schema";
+import executor from "./executor";
+jest.mock("child_process", () => ({
   execSync: jest.fn(),
 }));
-import { execSync } from 'child_process';
+import { execSync } from "child_process";
 
 const mockContext = {
-  workspace: { projects: { testProject: { root: 'libs/testProject' } } },
-  projectName: 'testProject',
+  workspace: { projects: { testProject: { root: "libs/testProject" } } },
+  projectName: "testProject",
 } as any;
 
-describe('Spellcheck Executor', () => {
+describe("Spellcheck Executor", () => {
   beforeEach(() => {
     (execSync as any) = jest.fn();
   });
 
-  it('empty options', async () => {
+  it("empty options", async () => {
     const options: SpellcheckExecutorSchema = {};
 
     const output = await executor(options, mockContext);
@@ -23,9 +23,9 @@ describe('Spellcheck Executor', () => {
     expect(output.success).toBe(true);
   });
 
-  it('config', async () => {
+  it("config", async () => {
     const options: SpellcheckExecutorSchema = {
-      cspellConfig: 'cspell.config.js',
+      cspellConfig: "cspell.config.js",
     };
 
     const output = await executor(options, mockContext);
@@ -35,7 +35,7 @@ describe('Spellcheck Executor', () => {
     expect(output.success).toBe(true);
   });
 
-  it('disable color', async () => {
+  it("disable color", async () => {
     const options: SpellcheckExecutorSchema = {
       disableColor: true,
     };
@@ -45,9 +45,9 @@ describe('Spellcheck Executor', () => {
     expect(output.success).toBe(true);
   });
 
-  it('config and disable color', async () => {
+  it("config and disable color", async () => {
     const options: SpellcheckExecutorSchema = {
-      cspellConfig: 'cspell.config.js',
+      cspellConfig: "cspell.config.js",
       disableColor: true,
     };
 
@@ -61,6 +61,6 @@ describe('Spellcheck Executor', () => {
 
 function expectCommandToHaveBeenCalled(expectedCommandLineText: string) {
   expect(execSync).toHaveBeenCalledWith(expectedCommandLineText, {
-    stdio: 'inherit',
+    stdio: "inherit",
   });
 }
