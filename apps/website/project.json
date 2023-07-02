@@ -59,10 +59,9 @@
       }
     },
     "spellcheck": {
-      "executor": "nx:run-commands",
+      "executor": "@right-click/nx-spellcheck:spellcheck",
       "options": {
-        "cwd": "apps/website",
-        "command": "cspell lint \"**\" --color"
+        "cspellConfig": "apps/website/.cspell.json"
       }
     },
     "typescript-check": {

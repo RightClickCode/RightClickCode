@@ -1,0 +1,32 @@
+{
+  "name": "plugins-spellcheck-e2e",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "apps/plugins/spellcheck-e2e/tests",
+  "targets": {
+    "e2e": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "apps/plugins/spellcheck-e2e/jest.config.ts",
+        "passWithNoTests": true,
+        "runInBand": true
+      },
+      "configurations": {
+        "ci": {
+          "ci": true,
+          "codeCoverage": true
+        }
+      },
+      "dependsOn": ["^build"]
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/plugins/spellcheck-e2e/**/*.ts"]
+      }
+    }
+  },
+  "implicitDependencies": ["plugins-spellcheck"]
+}

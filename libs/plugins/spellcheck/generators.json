@@ -1,0 +1,9 @@
+{
+  "generators": {
+    "plugins-spellcheck": {
+      "factory": "./src/generators/plugins-spellcheck/generator",
+      "schema": "./src/generators/plugins-spellcheck/schema.json",
+      "description": "plugins-spellcheck generator"
+    }
+  }
+}

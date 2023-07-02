@@ -1,0 +1,9 @@
+{
+  "executors": {
+    "spellcheck": {
+      "implementation": "./src/executors/spellcheck/executor",
+      "schema": "./src/executors/spellcheck/schema.json",
+      "description": "cspell spellcheck executor"
+    }
+  }
+}

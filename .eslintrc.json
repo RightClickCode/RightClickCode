@@ -37,6 +37,11 @@
       "settings": {
         "mdx/code-blocks": true
       }
+    },
+    {
+      "files": "*.json",
+      "parser": "jsonc-eslint-parser",
+      "rules": {}
     }
   ]
 }
