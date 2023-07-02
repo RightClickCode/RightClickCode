@@ -12,7 +12,8 @@
         "streetsidesoftware.code-spell-checker",
         "eamodio.gitlens",
         "unifiedjs.vscode-mdx",
-        "esbenp.prettier-vscode"
+        "esbenp.prettier-vscode",
+        "github.vscode-github-actions"
       ]
     }
   },
