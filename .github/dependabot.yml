@@ -24,6 +24,7 @@ updates:
       - dependency-name: "@types/react-dom"
       - dependency-name: "core-js"
       - dependency-name: "eslint-config-next"
+      - dependency-name: "typescript"
     groups:
       docusaurus:
         patterns:
