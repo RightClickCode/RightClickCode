@@ -13,7 +13,7 @@
     "@docusaurus/core": "2.4.1",
     "@docusaurus/preset-classic": "2.4.1",
     "@emotion/react": "11.10.5",
-    "@emotion/server": "11.10.0",
+    "@emotion/server": "11.11.0",
     "@emotion/styled": "11.10.5",
     "@mdx-js/react": "^1.6.22",
     "@nx/next": "16.7.4",
