@@ -16,6 +16,7 @@ updates:
       prefix-development: "chore(dev-deps):"
     ignore:
       - dependency-name: "@nx/*"
+      - dependency-name: "@swc-node/register"
     groups:
       docusaurus:
         patterns:
