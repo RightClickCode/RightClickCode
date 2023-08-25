@@ -16,3 +16,7 @@ updates:
       prefix-development: "chore(dev-deps):"
     ignore:
       - dependency-name: "@nx/*"
+    groups:
+      docusaurus:
+        patterns:
+          - "@docusaurus/*"
