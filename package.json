@@ -30,7 +30,7 @@
   "devDependencies": {
     "@babel/core": "7.21.0",
     "@docusaurus/module-type-aliases": "2.4.1",
-    "@emotion/babel-plugin": "11.10.5",
+    "@emotion/babel-plugin": "11.11.0",
     "@nx/cypress": "16.7.4",
     "@nx/devkit": "16.7.4",
     "@nx/eslint-plugin": "16.7.4",
