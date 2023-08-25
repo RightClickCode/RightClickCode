@@ -17,6 +17,10 @@ updates:
     ignore:
       - dependency-name: "@nx/*"
       - dependency-name: "@swc-node/register"
+      - dependency-name: "@types/jest"
+      - dependency-name: "@types/node"
+      - dependency-name: "@types/react"
+      - dependency-name: "@types/react-dom"
     groups:
       docusaurus:
         patterns:
