@@ -28,7 +28,7 @@
     "tslib": "^2.3.0"
   },
   "devDependencies": {
-    "@babel/core": "7.21.0",
+    "@babel/core": "7.22.15",
     "@docusaurus/module-type-aliases": "2.4.1",
     "@emotion/babel-plugin": "11.10.5",
     "@nx/cypress": "16.7.4",
