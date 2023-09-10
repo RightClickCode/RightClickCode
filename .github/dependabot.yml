@@ -25,6 +25,7 @@ updates:
       - dependency-name: "core-js"
       - dependency-name: "eslint-config-next"
       - dependency-name: "eslint-plugin-cypress"
+      - dependency-name: "next"
       - dependency-name: "typescript"
     groups:
       docusaurus:
