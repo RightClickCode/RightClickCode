@@ -27,6 +27,7 @@ updates:
       - dependency-name: "eslint-plugin-cypress"
       - dependency-name: "next"
       - dependency-name: "typescript"
+      - dependency-name: "webpack"
     groups:
       docusaurus:
         patterns:
