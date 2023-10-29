@@ -173,8 +173,8 @@ devDependencies:
     specifier: 29.4.3
     version: 29.4.3
   jsonc-eslint-parser:
-    specifier: ^2.1.0
-    version: 2.1.0
+    specifier: ^2.4.0
+    version: 2.4.0
   lint-staged:
     specifier: ^14.0.1
     version: 14.0.1
@@ -4940,7 +4940,7 @@ packages:
       chalk: 4.1.2
       confusing-browser-globals: 1.0.11
       eslint-config-prettier: 8.1.0(eslint@8.15.0)
-      jsonc-eslint-parser: 2.1.0
+      jsonc-eslint-parser: 2.4.0
       semver: 7.5.3
       tslib: 2.5.0
     transitivePeerDependencies:
@@ -11927,14 +11927,14 @@ packages:
     engines: {node: '>=6'}
     hasBin: true
 
-  /jsonc-eslint-parser@2.1.0:
-    resolution: {integrity: sha512-qCRJWlbP2v6HbmKW7R3lFbeiVWHo+oMJ0j+MizwvauqnCV/EvtAeEeuCgoc/ErtsuoKgYB8U4Ih8AxJbXoE6/g==}
+  /jsonc-eslint-parser@2.4.0:
+    resolution: {integrity: sha512-WYDyuc/uFcGp6YtM2H0uKmUwieOuzeE/5YocFJLnLfclZ4inf3mRn8ZVy1s7Hxji7Jxm6Ss8gqpexD/GlKoGgg==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dependencies:
-      acorn: 8.8.2
+      acorn: 8.10.0
       eslint-visitor-keys: 3.3.0
       espree: 9.5.0
-      semver: 7.5.3
+      semver: 7.5.4
     dev: true
 
   /jsonc-parser@3.2.0:
