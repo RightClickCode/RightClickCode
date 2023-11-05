@@ -2,6 +2,7 @@ import { defineConfig } from "@playwright/test";
 import { nxE2EPreset } from "@nx/playwright/preset";
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { workspaceRoot } from "@nx/devkit";
+import { devices } from "@playwright/test";
 
 // For CI, you may want to set BASE_URL to the deployed application.
 const baseURL = process.env["BASE_URL"] || "http://localhost:3000";
@@ -30,4 +31,12 @@ export default defineConfig({
     reuseExistingServer: !process.env.CI,
     cwd: workspaceRoot,
   },
+  projects: [
+    {
+      name: "chromium",
+      use: {
+        ...devices["Desktop Chrome"],
+      },
+    },
+  ],
 });
