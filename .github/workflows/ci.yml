@@ -16,6 +16,8 @@ jobs:
     uses: ./.github/workflows/nx-cloud-main.yml
     secrets: inherit
     with:
+      environment-variables: |
+        ARGOS_TOKEN= $ARGOS_TOKEN
       pnpm-version: 7.28.0
       number-of-agents: 3
       init-commands: |
