@@ -17,7 +17,7 @@ jobs:
       pnpm-version: 7.28.0
       number-of-agents: 3
       init-commands: |
-        pnpm exec nx-cloud start-ci-run --stop-agents-after="upload-screenshots" --agent-count=3
+        pnpm exec nx-cloud start-ci-run --stop-agents-after="e2e" --agent-count=3
       parallel-commands: |
         pnpm exec nx-cloud record -- pnpm exec nx format:check
       parallel-commands-on-agents: |
@@ -27,7 +27,7 @@ jobs:
         pnpm exec nx affected --target=test --parallel=3 --ci --code-coverage
         pnpm exec nx affected --target=build --parallel=3
         pnpm exec nx affected --target=e2e --parallel=3
-        pnpm exec nx affected --target=upload-screenshots --parallel=1
+      final-commands: pnpm exec nx affected --target=upload-screenshots --parallel=1
 
   agents:
     name: Nx Cloud - Agents
