@@ -70,6 +70,20 @@
         "cwd": "apps/docs",
         "command": "tsc -p tsconfig.json"
       }
+    },
+    "e2e": {
+      "executor": "@nx/playwright:playwright",
+      "outputs": ["{workspaceRoot}/dist/.playwright/apps/docs"],
+      "options": {
+        "config": "apps/docs/playwright.config.ts"
+      }
+    },
+    "upload-screenshots": {
+      "dependsOn": ["e2e"],
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "yarn argos upload ./screenshots/"
+      }
     }
   }
 }

@@ -59,8 +59,6 @@ on:
         required: false
         type: string
         default: "nx-main-artifacts"
-      # We needed this input in order to be able to configure out integration tests for this repo, it is not documented
-      # so as to not cause confusion/add noise, but technically any consumer of the workflow can use it if they want to.
       working-directory:
         required: false
         type: string
@@ -132,7 +130,8 @@ jobs:
         if: steps.package_manager.outputs.name == 'pnpm'
         uses: pnpm/action-setup@v2
         with:
-          version: ${{ inputs.pnpm-version || 'latest' }}
+          version: ${{ inputs.pnpm-version }}
+          package_json_file: "${{ inputs.working-directory || github.workspace }}/package.json"
 
       - name: Print node/npm/yarn versions
         id: versions

@@ -8,4 +8,5 @@ export default {
   },
   moduleFileExtensions: ["ts", "js", "html"],
   coverageDirectory: "../../coverage/apps/docs",
+  testPathIgnorePatterns: ["/e2e/"],
 };
