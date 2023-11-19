@@ -7,6 +7,7 @@
     "streetsidesoftware.code-spell-checker",
     "esbenp.prettier-vscode",
     "github.vscode-github-actions",
-    "ms-playwright.playwright"
+    "ms-playwright.playwright",
+    "unifiedjs.vscode-mdx"
   ]
 }
