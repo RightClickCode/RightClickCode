@@ -23,6 +23,7 @@ updates:
       - dependency-name: "@types/node"
       - dependency-name: "@types/react"
       - dependency-name: "@types/react-dom"
+      - dependency-name: "babel-jest"
       - dependency-name: "core-js"
       - dependency-name: "eslint-config-next"
       - dependency-name: "eslint-plugin-cypress"
