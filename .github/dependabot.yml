@@ -28,6 +28,7 @@ updates:
       - dependency-name: "eslint-plugin-cypress"
       - dependency-name: "next"
       - dependency-name: "tslib"
+      - dependency-name: "ts-jest"
       - dependency-name: "typescript"
       - dependency-name: "webpack"
     groups:
