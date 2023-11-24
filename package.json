@@ -92,7 +92,7 @@
   },
   "pnpm": {
     "overrides": {
-      "trim@0.0.1": "0.0.3"
+      "@docusaurus/core@3.0.0>wait-on": "7.2.0"
     }
   }
 }
