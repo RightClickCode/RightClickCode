@@ -29,6 +29,7 @@ updates:
       - dependency-name: "eslint-config-next"
       - dependency-name: "eslint-plugin-cypress"
       - dependency-name: "next"
+      - dependency-name: "prettier"
       - dependency-name: "tslib"
       - dependency-name: "ts-jest"
       - dependency-name: "typescript"
