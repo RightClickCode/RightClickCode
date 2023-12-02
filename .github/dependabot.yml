@@ -19,6 +19,7 @@ updates:
       - dependency-name: "@emotion/*"
       - dependency-name: "@nx/*"
       - dependency-name: "@swc-node/register"
+      - dependency-name: "@swc/core"
       - dependency-name: "@types/jest"
       - dependency-name: "@types/node"
       - dependency-name: "@types/react"
