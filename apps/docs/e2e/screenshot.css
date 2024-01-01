@@ -6,6 +6,8 @@ iframe,
 img[src$='.gif'],
 /* Algolia keyboard shortcuts appear with a little delay */
 .DocSearch-Button-Keys > kbd,
+/* Skip to Content shows in screenshots and shifts content */
+.skipToContent,
 /* The live playground preview can often display dates/counters */
 [class*='playgroundPreview'] {
   visibility: hidden;
