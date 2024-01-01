@@ -6,13 +6,13 @@ iframe,
 img[src$='.gif'],
 /* Algolia keyboard shortcuts appear with a little delay */
 .DocSearch-Button-Keys > kbd,
-/* Skip to Content shows in screenshots and shifts content */
-.skipToContent,
 /* The live playground preview can often display dates/counters */
 [class*='playgroundPreview'] {
   visibility: hidden;
 }
 
+/* Skip to Content link showing in screenshots shifts content */
+.skipToContent,
 /* Different docs last-update dates can alter layout */
 .theme-last-updated,
 /* Mermaid diagrams are rendered client-side and produce layout shifts */
