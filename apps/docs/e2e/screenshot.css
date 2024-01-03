@@ -11,6 +11,8 @@ img[src$='.gif'],
   visibility: hidden;
 }
 
+/* Skip to Content link showing in screenshots shifts content */
+[class*='skipToContent'],
 /* Different docs last-update dates can alter layout */
 .theme-last-updated,
 /* Mermaid diagrams are rendered client-side and produce layout shifts */
