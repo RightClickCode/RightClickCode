@@ -34,8 +34,8 @@ dependencies:
     specifier: 0.5.3
     version: 0.5.3
   clsx:
-    specifier: ^1.2.1
-    version: 1.2.1
+    specifier: ^2.1.0
+    version: 2.1.0
   core-js:
     specifier: ^3.6.5
     version: 3.29.0
@@ -4777,7 +4777,7 @@ packages:
       '@docusaurus/utils-common': 3.0.1(@docusaurus/types@3.0.1)
       '@docusaurus/utils-validation': 3.0.1(@docusaurus/types@3.0.1)(@swc/core@1.3.95)
       '@mdx-js/react': 3.0.0(@types/react@18.2.24)(react@18.2.0)
-      clsx: 2.0.0
+      clsx: 2.1.0
       copy-text-to-clipboard: 3.2.0
       infima: 0.2.0-alpha.43
       lodash: 4.17.21
@@ -4827,7 +4827,7 @@ packages:
       '@types/history': 4.7.11
       '@types/react': 18.2.24
       '@types/react-router-config': 5.0.10
-      clsx: 2.0.0
+      clsx: 2.1.0
       parse-numeric-range: 1.3.0
       prism-react-renderer: 2.3.0(react@18.2.0)
       react: 18.2.0
@@ -4870,7 +4870,7 @@ packages:
       '@docusaurus/utils-validation': 3.0.1(@docusaurus/types@3.0.1)(@swc/core@1.3.95)
       algoliasearch: 4.20.0
       algoliasearch-helper: 3.15.0(algoliasearch@4.20.0)
-      clsx: 2.0.0
+      clsx: 2.1.0
       eta: 2.2.0
       fs-extra: 11.2.0
       lodash: 4.17.21
@@ -9074,13 +9074,8 @@ packages:
     resolution: {integrity: sha512-JQHZ2QMW6l3aH/j6xCqQThY/9OH4D/9ls34cgkUBiEeocRTU04tHfKPBsUK1PqZCUQM7GiA0IIXJSuXHI64Kbg==}
     engines: {node: '>=0.8'}
 
-  /clsx@1.2.1:
-    resolution: {integrity: sha512-EcR6r5a8bj6pu3ycsa/E/cKVGuTgZJZdsyUYHOksG/UHIiKfjxzRxYJpyVBwYaQeOvghal9fcc4PidlgzugAQg==}
-    engines: {node: '>=6'}
-    dev: false
-
-  /clsx@2.0.0:
-    resolution: {integrity: sha512-rQ1+kcj+ttHG0MKVGBUXwayCCF1oh39BF5COIpRzuCEv8Mwjv0XucrI2ExNTOn9IlLifGClWQcU9BrZORvtw6Q==}
+  /clsx@2.1.0:
+    resolution: {integrity: sha512-m3iNNWpd9rl3jvvcBnu70ylMdrXt8Vlq4HYadnU5fwcOtvkSQWPmj7amUcDT2qYI7risszBjI5AUIUox9D16pg==}
     engines: {node: '>=6'}
     dev: false
 
@@ -16114,7 +16109,7 @@ packages:
       react: '>=16.0.0'
     dependencies:
       '@types/prismjs': 1.26.3
-      clsx: 2.0.0
+      clsx: 2.1.0
       react: 18.2.0
     dev: false
 
