@@ -47,16 +47,12 @@
       "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
-        "jestConfig": "apps/website/jest.config.ts",
-        "passWithNoTests": true
+        "jestConfig": "apps/website/jest.config.ts"
       }
     },
     "lint": {
       "executor": "@nx/eslint:lint",
-      "outputs": ["{options.outputFile}"],
-      "options": {
-        "lintFilePatterns": ["apps/website/**/*.{ts,tsx,md,mdx,js,jsx}"]
-      }
+      "outputs": ["{options.outputFile}"]
     },
     "spellcheck": {
       "executor": "@right-click/nx-spellcheck:spellcheck",
