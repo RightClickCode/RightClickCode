@@ -37,6 +37,7 @@
     "@docusaurus/module-type-aliases": "3.1.1",
     "@docusaurus/tsconfig": "3.1.1",
     "@emotion/babel-plugin": "11.10.5",
+    "@nx/cypress": "18.0.4",
     "@nx/devkit": "18.0.4",
     "@nx/eslint": "18.0.4",
     "@nx/eslint-plugin": "18.0.4",
