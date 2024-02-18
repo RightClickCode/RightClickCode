@@ -29,6 +29,7 @@ npm-debug.log*
 
 ## NX ##
 .nx/cache
+migrations.json
 
 ## Screenshots ##
 /screenshots/
