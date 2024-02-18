@@ -1,3 +1,4 @@
+# https://github.com/nrwl/ci/blob/main/.github/workflows/nx-cloud-main.yml
 name: Nx Cloud Main
 
 on:
@@ -59,6 +60,10 @@ on:
         required: false
         type: string
         default: "nx-main-artifacts"
+      artifacts-retention-days:
+        required: false
+        type: number
+        default: 90
       working-directory:
         required: false
         type: string
@@ -131,7 +136,7 @@ jobs:
         uses: pnpm/action-setup@v2
         with:
           version: ${{ inputs.pnpm-version }}
-          package_json_file: "${{ inputs.working-directory || github.workspace }}/package.json"
+          package_json_file: "${{ inputs.working-directory && format('{0}/package.json', inputs.working-directory) || 'package.json' }}"
 
       - name: Print node/npm/yarn versions
         id: versions
@@ -351,6 +356,11 @@ jobs:
         # We need to escape the workspace path to be consistent cross-platform: https://github.com/actions/runner/issues/1066
         run: ${GITHUB_WORKSPACE//\\//}/.github/workflows/run-commands-in-parallel.sh '${{ steps.parallel_commands_config.outputs.result }}'
 
+      - name: Stop all running agents for this CI run
+        # It's important that we always run this step, otherwise in the case of any failures in preceding non-Nx steps, the agents will keep running and waste billable minutes
+        if: ${{ always() }}
+        run: npx nx-cloud stop-all-agents
+
       # The good thing about the multi-line string input for sequential commands is that we can simply forward it on as is to the bash shell and it will behave
       # how we want it to in terms of quote escaping, variable assignment etc
       - name: Run any configured final-commands sequentially
@@ -358,14 +368,10 @@ jobs:
         run: |
           ${{ inputs.final-commands }}
 
-      - name: Stop all running agents for this CI run
-        # It's important that we always run this step, otherwise in the case of any failures in preceding non-Nx steps, the agents will keep running and waste billable minutes
-        if: ${{ always() }}
-        run: npx nx-cloud stop-all-agents
-
       - name: Uploading artifacts
         uses: actions/upload-artifact@v3
         if: ${{ inputs.artifacts-path != '' }}
         with:
           name: ${{ inputs.artifacts-name }}
           path: ${{ inputs.artifacts-path }}
+          retention-days: ${{ inputs.artifacts-retention-days }}
