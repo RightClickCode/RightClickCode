@@ -6,33 +6,33 @@ on:
       - main
   pull_request:
 
-env:
-  NX_CLOUD_ACCESS_TOKEN: ${{ secrets.NX_CLOUD_ACCESS_TOKEN}}
-  ARGOS_TOKEN: ${{ secrets.ARGOS_TOKEN }}
+permissions:
+  actions: read
+  contents: read
 
 jobs:
   main:
-    name: Nx Cloud - Main Job
-    uses: ./.github/workflows/nx-cloud-main.yml
-    with:
-      pnpm-version: 8.14.1
-      number-of-agents: 3
-      init-commands: |
-        pnpm exec nx-cloud start-ci-run --stop-agents-after="e2e" --agent-count=3
-      parallel-commands: |
-        pnpm exec nx-cloud record -- pnpm exec nx format:check
-      parallel-commands-on-agents: |
-        pnpm exec nx affected --target=lint --parallel=3
-        pnpm exec nx affected --target=spellcheck --parallel=3
-        pnpm exec nx affected --target=typescript-check --parallel=3
-        pnpm exec nx affected --target=test --parallel=3 --ci --code-coverage
-        pnpm exec nx affected --target=build --parallel=3
-        pnpm exec nx affected --target=e2e --parallel=3
-      final-commands: pnpm exec nx affected --target=upload-screenshots --parallel=1 --no-dte
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
-  agents:
-    name: Nx Cloud - Agents
-    uses: nrwl/ci/.github/workflows/nx-cloud-agents.yml@v0.14
-    with:
-      number-of-agents: 3
-      pnpm-version: 8.14.1
+      # Connect your workspace on nx.app and uncomment this to enable task distribution.
+      # The "--stop-agents-after" is optional, but allows idle agents to shut down once the "e2e-ci" targets have been requested
+      - run: pnpm exec nx-cloud start-ci-run --distribute-on="5 linux-medium-js" --stop-agents-after="e2e-ci"
+
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 8
+      # Cache node_modules
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 20
+          cache: "pnpm"
+      - run: pnpm install --frozen-lockfile
+      - uses: nrwl/nx-set-shas@v4
+
+      - run: pnpm exec nx-cloud record -- nx format:check
+      - run: pnpm exec nx affected -t lint spellcheck typescript-check test build e2e e2e-ci
+      - run: pnpm exec nx affected --target=upload-screenshots --parallel=1 --no-dte
