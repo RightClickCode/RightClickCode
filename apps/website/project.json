@@ -66,6 +66,13 @@
         "cwd": "apps/website",
         "command": "tsc -p tsconfig.json"
       }
+    },
+    "e2e": {
+      "executor": "@nx/playwright:playwright",
+      "outputs": ["{workspaceRoot}/dist/.playwright/apps/website"],
+      "options": {
+        "config": "apps/website/playwright.config.ts"
+      }
     }
   },
   "tags": []
