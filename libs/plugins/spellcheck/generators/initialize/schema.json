@@ -1,6 +1,6 @@
 {
-  "$schema": "http://json-schema.org/schema",
-  "$id": "PluginsSpellcheck",
+  "$schema": "https://json-schema.org/schema",
+  "$id": "Initialize",
   "title": "",
   "type": "object",
   "properties": {
