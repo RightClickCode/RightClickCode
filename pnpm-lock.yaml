@@ -52,8 +52,8 @@ dependencies:
     specifier: 18.2.0
     version: 18.2.0(react@18.2.0)
   regenerator-runtime:
-    specifier: 0.13.7
-    version: 0.13.7
+    specifier: 0.14.1
+    version: 0.14.1
   tslib:
     specifier: ^2.3.0
     version: 2.5.0
@@ -16530,10 +16530,6 @@ packages:
 
   /regenerator-runtime@0.13.11:
     resolution: {integrity: sha512-kY1AZVr2Ra+t+piVaJ4gxaFaReZVH40AKNo7UCX6W+dEwBo/2oZJzqfuN1qLq1oL45o56cPaTXELwrTh8Fpggg==}
-
-  /regenerator-runtime@0.13.7:
-    resolution: {integrity: sha512-a54FxoJDIr27pgf7IgeQGxmqUNYrcV338lf/6gH456HZ/PhX+5BcwHXG9ajESmwe6WRO0tAzRUrRmNONWgkrew==}
-    dev: false
 
   /regenerator-runtime@0.14.1:
     resolution: {integrity: sha512-dYnhHh0nJoMfnkZs6GmmhFknAGRrLznOu5nc9ML+EJxGvrx6H7teuevqVqCuPcPK//3eDrrjQhehXVx9cnkGdw==}
