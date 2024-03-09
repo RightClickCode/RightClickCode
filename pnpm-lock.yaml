@@ -63,8 +63,8 @@ devDependencies:
     specifier: ^1.0.11
     version: 1.0.11
   '@argos-ci/playwright':
-    specifier: ^1.6.0
-    version: 1.6.0
+    specifier: ^1.9.3
+    version: 1.9.3
   '@babel/core':
     specifier: 7.21.0
     version: 7.21.0
@@ -393,8 +393,8 @@ packages:
       '@jridgewell/gen-mapping': 0.3.3
       '@jridgewell/trace-mapping': 0.3.22
 
-  /@argos-ci/browser@1.3.0:
-    resolution: {integrity: sha512-SFeEBoWrm/li4+L4TNVFk2WJC2iARPhswLJQNSDs+ARvduEr+y7ry2O+AsVY4y3NztPqjL2tBHIcFRnvV17rRg==}
+  /@argos-ci/browser@1.5.0:
+    resolution: {integrity: sha512-a9uzWL3L2qalqXa5kzkjlfnznpkGbzNhS5QSf0DtCylOWSrpnUMK+cIj3xzGMgmZK7SZ/r9OYdSZfsaSizWLXA==}
     engines: {node: '>=16.0.0'}
     dev: true
 
@@ -407,21 +407,6 @@ packages:
       commander: 11.0.0
       ora: 7.0.1
       update-notifier: 6.0.2
-    transitivePeerDependencies:
-      - supports-color
-    dev: true
-
-  /@argos-ci/core@1.4.0:
-    resolution: {integrity: sha512-1npIRpFNm40OaX9UP8Ry1ZSF4Y4jJdtkyUH2arS5kTV2Ksc0WtqO2rx+ELwqr4iHODNSh7QGUX4Jnj1usRap4Q==}
-    engines: {node: '>=16.0.0'}
-    dependencies:
-      '@argos-ci/util': 1.2.0
-      axios: 1.6.0(debug@4.3.4)
-      convict: 6.2.4
-      debug: 4.3.4(supports-color@8.1.1)
-      fast-glob: 3.3.2
-      sharp: 0.32.6
-      tmp: 0.2.1
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -441,21 +426,16 @@ packages:
       - supports-color
     dev: true
 
-  /@argos-ci/playwright@1.6.0:
-    resolution: {integrity: sha512-0WUVIhmkEtEUNyz/z1fX6WXEnqlg1kG9HOURxcBvjoaZeJ1ZZ0ijLkWO3w/ZOPyIp02fBzoHGWHkwU7fb1fgFA==}
+  /@argos-ci/playwright@1.9.3:
+    resolution: {integrity: sha512-kgMy7SHkBj4MFXfpeqh8Gk6upQwgs16/4zcV9U/C2A8JpXRov96IKetK5vlCqqcrO/k0oglS+eZypMP5bvmfsw==}
     engines: {node: '>=16.0.0'}
     dependencies:
-      '@argos-ci/browser': 1.3.0
-      '@argos-ci/core': 1.4.0
-      '@argos-ci/util': 1.2.0
+      '@argos-ci/browser': 1.5.0
+      '@argos-ci/core': 1.5.4
+      '@argos-ci/util': 1.2.1
       chalk: 5.3.0
     transitivePeerDependencies:
       - supports-color
-    dev: true
-
-  /@argos-ci/util@1.2.0:
-    resolution: {integrity: sha512-e/sAEECDzUr02v5sXPcd1Ky3WqNOMDWkutfBC8RBizj3Z+CUp6uwV+bzyTZaE9Zms9WekqXAfKe1rZkEie+DrA==}
-    engines: {node: '>=16.0.0'}
     dev: true
 
   /@argos-ci/util@1.2.1:
