@@ -150,8 +150,8 @@ devDependencies:
     specifier: ^8.6.0
     version: 8.6.0
   cypress:
-    specifier: ^13.0.0
-    version: 13.0.0
+    specifier: ^13.7.1
+    version: 13.7.1
   eslint:
     specifier: 8.57.0
     version: 8.57.0
@@ -6370,10 +6370,6 @@ packages:
       '@types/node': 18.19.17
     dev: false
 
-  /@types/node@16.18.59:
-    resolution: {integrity: sha512-PJ1w2cNeKUEdey4LiPra0ZuxZFOGvetswE8qHRriV/sUkL5Al4tTmPV9D2+Y/TPIxTHHgxTfRjZVKWhPw/ORhQ==}
-    dev: true
-
   /@types/node@17.0.45:
     resolution: {integrity: sha512-w+tIMs3rq2afQdsPJlODhoUEKzFP1ayaoyl1CcnwtIlsVe7K7bA1NGm4s3PraqTLlXnbIN84zuBlxBWo1u9BLw==}
     dev: false
@@ -9065,15 +9061,14 @@ packages:
   /csstype@3.1.1:
     resolution: {integrity: sha512-DJR/VvkAvSZW9bTouZue2sSxDwdTN92uHjqeKVm+0dAqdfNykRzQ95tay8aXMBAAPpUiq4Qcug2L7neoRh2Egw==}
 
-  /cypress@13.0.0:
-    resolution: {integrity: sha512-nWHU5dUxP2Wm/zrMd8SWTTl706aJex/l+H4vi/tbu2SWUr17BUcd/sIYeqyxeoSPW1JFV2pT1pf4JEImH/POMg==}
+  /cypress@13.7.1:
+    resolution: {integrity: sha512-4u/rpFNxOFCoFX/Z5h+uwlkBO4mWzAjveURi3vqdSu56HPvVdyGTxGw4XKGWt399Y1JwIn9E1L9uMXQpc0o55w==}
     engines: {node: ^16.0.0 || ^18.0.0 || >=20.0.0}
     hasBin: true
     requiresBuild: true
     dependencies:
       '@cypress/request': 3.0.1
       '@cypress/xvfb': 1.2.4(supports-color@8.1.1)
-      '@types/node': 16.18.59
       '@types/sinonjs__fake-timers': 8.1.1
       '@types/sizzle': 2.3.3
       arch: 2.2.0
@@ -9109,7 +9104,7 @@ packages:
       process: 0.11.10
       proxy-from-env: 1.0.0
       request-progress: 3.0.0
-      semver: 7.5.4
+      semver: 7.6.0
       supports-color: 8.1.1
       tmp: 0.2.1
       untildify: 4.0.0
