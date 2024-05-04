@@ -114,8 +114,8 @@ devDependencies:
     specifier: ~1.8.0
     version: 1.8.0(@swc/core@1.3.95)(@swc/types@0.1.6)(typescript@5.0.4)
   '@swc/cli':
-    specifier: ~0.3.10
-    version: 0.3.10(@swc/core@1.3.95)
+    specifier: ~0.3.12
+    version: 0.3.12(@swc/core@1.3.95)
   '@swc/core':
     specifier: 1.3.95
     version: 1.3.95(@swc/helpers@0.5.11)
@@ -6974,8 +6974,8 @@ packages:
       source-map-support: 0.5.21
       tslib: 2.6.2
 
-  /@swc/cli@0.3.10(@swc/core@1.3.95):
-    resolution: {integrity: sha512-YWfYo9kXdbmIuGwIPth9geKgb0KssCMTdZa44zAN5KoqcuCP2rTW9s60heQDSRNpbtCmUr7BKF1VivsoHXrvrQ==}
+  /@swc/cli@0.3.12(@swc/core@1.3.95):
+    resolution: {integrity: sha512-h7bvxT+4+UDrLWJLFHt6V+vNAcUNii2G4aGSSotKz1ECEk4MyEh5CWxmeSscwuz5K3i+4DWTgm4+4EyMCQKn+g==}
     engines: {node: '>= 16.14.0'}
     hasBin: true
     peerDependencies:
