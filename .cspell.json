@@ -20,13 +20,19 @@
       "name": "vscode-plugin-names",
       "path": ".cspell/vscode-plugin-name-dictionary.txt",
       "addWords": true
+    },
+    {
+      "name": "contributor-names",
+      "path": ".cspell/contributor-names.txt",
+      "addWords": true
     }
   ],
   "dictionaries": [
     "right-click-code",
     "nx",
     "npm-package-names",
-    "vscode-plugin-names"
+    "vscode-plugin-names",
+    "contributor-names"
   ],
   "overrides": [
     {
