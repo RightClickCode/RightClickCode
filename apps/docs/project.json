@@ -72,7 +72,7 @@
       "dependsOn": ["e2e"],
       "executor": "nx:run-commands",
       "options": {
-        "command": "yarn argos upload ./screenshots/"
+        "command": "pnpm argos upload ./screenshots/"
       }
     }
   }
