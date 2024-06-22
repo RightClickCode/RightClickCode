@@ -5,6 +5,7 @@
   "engines": {
     "node": ">=18.0"
   },
+  "packageManager": "pnpm@9.1.0",
   "scripts": {
     "start": "nx serve",
     "build": "nx build",
@@ -21,7 +22,7 @@
     "@mdx-js/react": "3.0.1",
     "@nx/next": "19.1.1",
     "@swc/helpers": "0.5.11",
-    "clsx": "^2.1.0",
+    "clsx": "^2.1.1",
     "core-js": "^3.6.5",
     "next": "14.2.3",
     "prism-react-renderer": "2.3.1",
@@ -47,7 +48,7 @@
     "@nx/react": "19.1.1",
     "@nx/web": "19.1.1",
     "@nx/workspace": "19.1.1",
-    "@playwright/test": "^1.42.1",
+    "@playwright/test": "^1.44.1",
     "@swc-node/register": "~1.8.0",
     "@swc/cli": "0.3.12",
     "@swc/core": "1.3.95",
@@ -67,7 +68,7 @@
     "eslint-plugin-import": "2.29.1",
     "eslint-plugin-jsx-a11y": "6.8.0",
     "eslint-plugin-mdx": "^2.0.5",
-    "eslint-plugin-playwright": "1.6.0",
+    "eslint-plugin-playwright": "1.6.2",
     "eslint-plugin-react": "7.34.1",
     "eslint-plugin-react-hooks": "4.6.2",
     "husky": "^9.0.11",
