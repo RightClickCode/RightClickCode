@@ -21,7 +21,7 @@
     "@mdx-js/react": "3.0.1",
     "@nx/next": "19.1.1",
     "@swc/helpers": "0.5.11",
-    "clsx": "^2.1.0",
+    "clsx": "^2.1.1",
     "core-js": "^3.6.5",
     "next": "14.2.3",
     "prism-react-renderer": "2.3.1",
