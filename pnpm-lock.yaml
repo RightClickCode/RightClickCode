@@ -65,8 +65,8 @@ importers:
         specifier: ^2.1.0
         version: 2.1.0
       '@argos-ci/playwright':
-        specifier: ^3.0.2
-        version: 3.0.2
+        specifier: ^3.4.0
+        version: 3.4.0
       '@babel/core':
         specifier: 7.21.0
         version: 7.21.0
@@ -312,8 +312,8 @@ packages:
     resolution: {integrity: sha512-30iZtAPgz+LTIYoeivqYo853f02jBYSd5uGnGpkFV0M3xOt9aN73erkgYAmZU43x4VfqcnLxW9Kpg3R5LC4YYw==}
     engines: {node: '>=6.0.0'}
 
-  '@argos-ci/browser@2.1.0':
-    resolution: {integrity: sha512-pOWyyp39g1Jhags7Z7Qb+rgNjUtvMxh21lgF1Ts9epobE2ZQLkRxlUheSDlC6VbvauhO+8WS3mo3Q8dgEn7UtA==}
+  '@argos-ci/browser@2.1.2':
+    resolution: {integrity: sha512-4dpz76kW0KnXCYdxtkcdiaYUM4owmKtT9zPqrd1yPo+VuSNCNULyCZJ4mdy0aXWT716JLMMmIZ3AnQSkyaqvaA==}
     engines: {node: '>=18.0.0'}
 
   '@argos-ci/cli@2.1.0':
@@ -325,12 +325,20 @@ packages:
     resolution: {integrity: sha512-T5W37CZ6HZjRcVAXuPj0wUB/Fm4VdwLvKpQL9yqSwiJganeNz7u8AFYJ30ujSUJS1jdUViW5TNnmsgDjuvGyTQ==}
     engines: {node: '>=18.0.0'}
 
-  '@argos-ci/playwright@3.0.2':
-    resolution: {integrity: sha512-fvrocGEVC6S3IatprSBmikzDKJcHH4i7ekHSG9xU5fXQHaIFoQJDti/sCCJ7QbKY2w30Ry9yaEALnsPVprD80w==}
+  '@argos-ci/core@2.4.0':
+    resolution: {integrity: sha512-CY8IQsc71cuIeF2U47aePzH8+YWK4ePG1j+gK5aQ0r744Wc467U4xej7gChMVrAaGlZKsgoIIeXE1ezF+rCryw==}
+    engines: {node: '>=18.0.0'}
+
+  '@argos-ci/playwright@3.4.0':
+    resolution: {integrity: sha512-Qigw3OiJiVO3MO6Vg4DrW4hd+jCJ2lv2WqpDFSEtTNdxnRU02/v2k8enBvrsqbMSPA0YLixjb984wl6yU7NwUg==}
     engines: {node: '>=18.0.0'}
 
   '@argos-ci/util@2.0.0':
     resolution: {integrity: sha512-wnsNQOjcNfxOi8cHWSv8+GhzUeIitDJgjhuSNR9zrfHB0Y3nDVI57S/mHRo+EMAaWwghfbrxW1ypRCXVseN0GA==}
+    engines: {node: '>=18.0.0'}
+
+  '@argos-ci/util@2.1.0':
+    resolution: {integrity: sha512-/78zJjZJCh3i7Eh3/lo7ybXK2pzXFGUNHbK3SgJNKNbFiBDllNRfy+x0kccjvN2gCCDz877jnFOlSoZZuMK56A==}
     engines: {node: '>=18.0.0'}
 
   '@babel/code-frame@7.18.6':
@@ -8926,7 +8934,7 @@ snapshots:
       '@jridgewell/gen-mapping': 0.3.5
       '@jridgewell/trace-mapping': 0.3.25
 
-  '@argos-ci/browser@2.1.0': {}
+  '@argos-ci/browser@2.1.2': {}
 
   '@argos-ci/cli@2.1.0':
     dependencies:
@@ -8949,17 +8957,31 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@argos-ci/playwright@3.0.2':
+  '@argos-ci/core@2.4.0':
     dependencies:
-      '@argos-ci/browser': 2.1.0
-      '@argos-ci/core': 2.2.0
-      '@argos-ci/util': 2.0.0
+      '@argos-ci/util': 2.1.0
+      axios: 1.6.8(debug@4.3.4)
+      convict: 6.2.4
+      debug: 4.3.4
+      fast-glob: 3.3.2
+      sharp: 0.33.3
+      tmp: 0.2.3
+    transitivePeerDependencies:
+      - supports-color
+
+  '@argos-ci/playwright@3.4.0':
+    dependencies:
+      '@argos-ci/browser': 2.1.2
+      '@argos-ci/core': 2.4.0
+      '@argos-ci/util': 2.1.0
       chalk: 5.3.0
       debug: 4.3.4
     transitivePeerDependencies:
       - supports-color
 
   '@argos-ci/util@2.0.0': {}
+
+  '@argos-ci/util@2.1.0': {}
 
   '@babel/code-frame@7.18.6':
     dependencies:
