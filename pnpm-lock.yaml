@@ -3062,8 +3062,8 @@ packages:
     resolution: {integrity: sha512-M0JtH+hlOL5pLQwHOLNYZaXuhqmvS8oExsqB1SBYgA4Dk7u/xx+YdGHXaK5pyUfed5mYXdlYiphWq3G8cRi5JQ==}
     engines: {node: '>=4'}
 
-  axios@1.6.8:
-    resolution: {integrity: sha512-v/ZHtJDU39mDpyBoFVkETcd/uNdxrWRrg3bKpOKzXFA6Bvqopts6ALSMU3y6ijYxbw2B+wPrIv46egTzJXCLGQ==}
+  axios@1.7.7:
+    resolution: {integrity: sha512-S4kL7XrjgBmvdGut0sN3yJxqYzrDOnivkBiN0OFs6hLiUam3UPvswUo0kqGyhqUZGEOytHyumEdXsAkgCOUf3Q==}
 
   axobject-query@3.2.1:
     resolution: {integrity: sha512-jsyHu61e6N4Vbz/v18DHwWYKK0bSWLqn47eeDSKPB7m8tqMHF9YJ+mhIk2lVteyZrY8tnSj/jHOv4YiTCuCJgg==}
@@ -8939,7 +8939,7 @@ snapshots:
   '@argos-ci/core@2.2.0':
     dependencies:
       '@argos-ci/util': 2.0.0
-      axios: 1.6.8(debug@4.3.4)
+      axios: 1.7.7(debug@4.3.4)
       convict: 6.2.4
       debug: 4.3.4
       fast-glob: 3.3.2
@@ -8951,7 +8951,7 @@ snapshots:
   '@argos-ci/core@2.4.1':
     dependencies:
       '@argos-ci/util': 2.1.0
-      axios: 1.6.8(debug@4.3.4)
+      axios: 1.7.7(debug@4.3.4)
       convict: 6.2.4
       debug: 4.3.4
       fast-glob: 3.3.2
@@ -13279,7 +13279,7 @@ snapshots:
 
   axe-core@4.7.0: {}
 
-  axios@1.6.8(debug@4.3.4):
+  axios@1.7.7(debug@4.3.4):
     dependencies:
       follow-redirects: 1.15.6(debug@4.3.4)
       form-data: 4.0.0
@@ -17835,7 +17835,7 @@ snapshots:
       '@yarnpkg/lockfile': 1.1.0
       '@yarnpkg/parsers': 3.0.0-rc.46
       '@zkochan/js-yaml': 0.0.7
-      axios: 1.6.8(debug@4.3.4)
+      axios: 1.7.7(debug@4.3.4)
       chalk: 4.1.2
       cli-cursor: 3.1.0
       cli-spinners: 2.6.1
