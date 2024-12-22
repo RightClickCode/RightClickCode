@@ -33,7 +33,7 @@
   },
   "devDependencies": {
     "@argos-ci/cli": "^2.5.3",
-    "@argos-ci/playwright": "^3.4.1",
+    "@argos-ci/playwright": "^3.9.4",
     "@babel/core": "7.21.0",
     "@docusaurus/module-type-aliases": "3.6.3",
     "@docusaurus/tsconfig": "3.6.3",
