@@ -29,8 +29,6 @@ updates:
       - dependency-name: "@typescript-eslint/parser"
       - dependency-name: "babel-jest"
       - dependency-name: "core-js"
-      - dependency-name: "eslint-config-next"
-      - dependency-name: "next"
       - dependency-name: "prettier"
       - dependency-name: "tslib"
       - dependency-name: "ts-jest"
