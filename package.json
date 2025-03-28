@@ -67,7 +67,7 @@
     "eslint-config-prettier": "9.1.0",
     "eslint-plugin-import": "2.31.0",
     "eslint-plugin-jsx-a11y": "6.10.2",
-    "eslint-plugin-mdx": "^2.0.5",
+    "eslint-plugin-mdx": "^2.3.4",
     "eslint-plugin-playwright": "2.1.0",
     "eslint-plugin-react": "7.34.1",
     "eslint-plugin-react-hooks": "5.0.0",
