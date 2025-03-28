@@ -64,15 +64,8 @@
       "application": {
         "babel": true
       }
-    },
-    "@nx/next": {
-      "application": {
-        "style": "@emotion/styled",
-        "linter": "eslint"
-      }
     }
   },
-  "defaultProject": "website",
   "nxCloudAccessToken": "YzRjOWE1NTUtMDc3ZC00NTIyLWFiNDQtODM2ZWM0NzM4OTA0fHJlYWQ=",
   "useLegacyCache": true
 }

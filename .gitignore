@@ -6,9 +6,6 @@ node_modules
 /dist/
 /build/
 
-## Next.js ##
-.next
-
 ## Docusaurus ##
 .docusaurus
 
