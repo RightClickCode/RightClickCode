@@ -38,3 +38,6 @@ updates:
       docusaurus:
         patterns:
           - "@docusaurus/*"
+      remark:
+        patterns:
+          - "remark-*"
