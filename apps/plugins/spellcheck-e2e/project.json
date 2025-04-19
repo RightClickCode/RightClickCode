@@ -3,6 +3,7 @@
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
   "sourceRoot": "apps/plugins/spellcheck-e2e/tests",
+  "implicitDependencies": ["plugins-spellcheck"],
   "targets": {
     "e2e": {
       "executor": "@nx/jest:jest",
@@ -17,6 +18,5 @@
       "executor": "@nx/eslint:lint",
       "outputs": ["{options.outputFile}"]
     }
-  },
-  "implicitDependencies": ["plugins-spellcheck"]
+  }
 }
