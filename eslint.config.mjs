@@ -3,6 +3,7 @@ import { dirname } from "path";
 import { fileURLToPath } from "url";
 import js from "@eslint/js";
 import nxEslintPlugin from "@nx/eslint-plugin";
+import * as mdx from "eslint-plugin-mdx";
 
 const compat = new FlatCompat({
   baseDirectory: dirname(fileURLToPath(import.meta.url)),
@@ -54,20 +55,18 @@ export default [
         ...config.rules,
       },
     })),
-  ...compat
-    .config({
-      extends: ["plugin:mdx/recommended"],
-      settings: {
-        "mdx/code-blocks": true,
-      },
-    })
-    .map((config) => ({
-      ...config,
-      files: ["**/*.md", "**/*.mdx"],
-      rules: {
-        ...config.rules,
-      },
-    })),
+  {
+    ...mdx.flat,
+    name: "eslint-mdx",
+    files: ["**/*.md ", "**/*.mdx"],
+    processor: mdx.createRemarkProcessor({
+      lintCodeBlocks: true,
+    }),
+    rules: {
+      ...mdx.flat.rules,
+      "mdx/remark": "error",
+    },
+  },
   {
     files: ["**/*.json"],
     // Override or add rules here
