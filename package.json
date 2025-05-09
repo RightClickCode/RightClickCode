@@ -22,7 +22,8 @@
     "clsx": "^2.1.1",
     "prism-react-renderer": "2.4.1",
     "react": "18.3.1",
-    "react-dom": "18.3.1"
+    "react-dom": "18.3.1",
+    "tslib": "^2.8.1"
   },
   "devDependencies": {
     "@argos-ci/cli": "^2.5.6",
