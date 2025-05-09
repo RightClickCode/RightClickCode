@@ -18,7 +18,6 @@ updates:
       prefix-development: "chore(dev-deps):"
     ignore:
       - dependency-name: "@babel/core"
-      - dependency-name: "@emotion/*"
       - dependency-name: "@nx/*"
       - dependency-name: "@swc-node/register"
       - dependency-name: "@swc/core"
@@ -28,7 +27,6 @@ updates:
       - dependency-name: "@types/react-dom"
       - dependency-name: "@typescript-eslint/parser"
       - dependency-name: "babel-jest"
-      - dependency-name: "core-js"
       - dependency-name: "prettier"
       - dependency-name: "tslib"
       - dependency-name: "ts-jest"
