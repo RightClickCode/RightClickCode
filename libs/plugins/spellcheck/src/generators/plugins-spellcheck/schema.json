@@ -1,18 +1,17 @@
 {
   "$schema": "http://json-schema.org/schema",
   "$id": "PluginsSpellcheck",
-  "title": "",
+  "title": "Configure Spellcheck",
   "type": "object",
   "properties": {
-    "name": {
+    "project": {
       "type": "string",
-      "description": "",
+      "description": "The name of the project to configure spellcheck for",
       "$default": {
         "$source": "argv",
         "index": 0
-      },
-      "x-prompt": "What name would you like to use?"
+      }
     }
   },
-  "required": ["name"]
+  "required": ["project"]
 }
