@@ -78,8 +78,8 @@ export async function configureSpellcheckGenerator(
   // Create project-specific config and dictionary
   createProjectConfig(tree, options.project, project.root);
 
-  // Add spellcheck target if it doesn't exist
-  if (!project.targets?.["spellcheck"]) {
+  // Add spellcheck target if it doesn't exist and skipTarget is not true
+  if (!options.skipTarget && !project.targets?.["spellcheck"]) {
     const updatedProject: ProjectConfiguration = {
       ...project,
       targets: {

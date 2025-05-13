@@ -12,6 +12,11 @@
         "index": 0
       },
       "x-prompt": "What project would you like to configure spellcheck for?"
+    },
+    "skipTarget": {
+      "type": "boolean",
+      "description": "Skip adding spellcheck target to project.json",
+      "default": false
     }
   },
   "required": ["project"]
