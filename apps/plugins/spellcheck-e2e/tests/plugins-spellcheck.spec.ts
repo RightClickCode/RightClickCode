@@ -15,7 +15,7 @@ describe("plugins-spellcheck e2e", () => {
   // are not dependant on one another.
   beforeAll(() => {
     ensureNxProject(
-      "@right-click/nx-spellcheck",
+      "@right-click-code/nx-spellcheck",
       "dist/libs/plugins/spellcheck"
     );
   });
