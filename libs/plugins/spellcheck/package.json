@@ -1,7 +1,10 @@
 {
-  "name": "@right-click/nx-spellcheck",
+  "name": "@right-click-code/nx-spellcheck",
   "version": "0.0.1",
   "type": "commonjs",
   "executors": "./executors.json",
-  "generators": "./generators.json"
+  "generators": "./generators.json",
+  "dependencies": {
+    "@nx/devkit": "^20.8.1"
+  }
 }

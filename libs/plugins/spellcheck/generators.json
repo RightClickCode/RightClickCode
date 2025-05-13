@@ -3,7 +3,7 @@
     "plugins-spellcheck": {
       "factory": "./src/generators/plugins-spellcheck/generator",
       "schema": "./src/generators/plugins-spellcheck/schema.json",
-      "description": "plugins-spellcheck generator"
+      "description": "Initialize project-level cspell configuration and dictionary"
     }
   }
 }

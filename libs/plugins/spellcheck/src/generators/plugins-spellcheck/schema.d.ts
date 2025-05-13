@@ -1,3 +1,3 @@
-export interface PluginsSpellcheckGeneratorSchema {
-  name: string;
+export interface ConfigureSpellcheckGeneratorSchema {
+  project: string;
 }
