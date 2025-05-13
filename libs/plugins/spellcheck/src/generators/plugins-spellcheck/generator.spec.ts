@@ -19,7 +19,7 @@ describe("configure-spellcheck generator", () => {
     });
   });
 
-  it("should create root cspell config if not exists", async () => {
+  it("should create root cspell config if it does not exists", async () => {
     await configureSpellcheckGenerator(tree, options);
     expect(tree.exists(".cspell.json")).toBeTruthy();
   });
@@ -27,7 +27,7 @@ describe("configure-spellcheck generator", () => {
   it("should create project-specific config and dictionary", async () => {
     await configureSpellcheckGenerator(tree, options);
     expect(tree.exists("apps/test/.cspell.json")).toBeTruthy();
-    expect(tree.exists("apps/test/.cspell/test.txt")).toBeTruthy();
+    expect(tree.exists("apps/test/.cspell/test-dictionary.txt")).toBeTruthy();
   });
 
   it("should configure project config to extend root config", async () => {
