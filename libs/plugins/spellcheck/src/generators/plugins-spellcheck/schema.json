@@ -10,7 +10,8 @@
       "$default": {
         "$source": "argv",
         "index": 0
-      }
+      },
+      "x-prompt": "What project would you like to configure spellcheck for?"
     }
   },
   "required": ["project"]
