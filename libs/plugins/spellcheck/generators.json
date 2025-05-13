@@ -1,6 +1,6 @@
 {
   "generators": {
-    "plugins-spellcheck": {
+    "configure-spellcheck": {
       "factory": "./src/generators/configure-spellcheck/generator",
       "schema": "./src/generators/configure-spellcheck/schema.json",
       "description": "Initialize project-level cspell configuration and dictionary"

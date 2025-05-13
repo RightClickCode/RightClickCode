@@ -1,4 +1,11 @@
-import { Tree, formatFiles, getProjects, joinPathFragments } from "@nx/devkit";
+import {
+  Tree,
+  formatFiles,
+  getProjects,
+  joinPathFragments,
+  updateProjectConfiguration,
+  ProjectConfiguration,
+} from "@nx/devkit";
 import { ConfigureSpellcheckGeneratorSchema } from "./schema";
 
 function ensureRootCSpellConfig(tree: Tree) {
@@ -70,6 +77,21 @@ export async function configureSpellcheckGenerator(
 
   // Create project-specific config and dictionary
   createProjectConfig(tree, options.project, project.root);
+
+  // Add spellcheck target if it doesn't exist
+  if (!project.targets?.["spellcheck"]) {
+    const updatedProject: ProjectConfiguration = {
+      ...project,
+      targets: {
+        ...project.targets,
+        spellcheck: {
+          executor: "@right-click-code/nx-spellcheck:spellcheck",
+          options: {},
+        },
+      },
+    };
+    updateProjectConfiguration(tree, options.project, updatedProject);
+  }
 
   await formatFiles(tree);
 }
