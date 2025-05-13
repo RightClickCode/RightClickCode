@@ -1,5 +1,5 @@
 import { createTreeWithEmptyWorkspace } from "@nx/devkit/testing";
-import { Tree, addProjectConfiguration } from "@nx/devkit";
+import { Tree, addProjectConfiguration, getProjects } from "@nx/devkit";
 import { configureSpellcheckGenerator } from "./generator";
 import { ConfigureSpellcheckGeneratorSchema } from "./schema";
 
@@ -36,5 +36,25 @@ describe("configure-spellcheck generator", () => {
       tree.read("apps/test/.cspell.json", "utf-8")
     );
     expect(configContent.import).toContain("../.cspell.json");
+  });
+
+  it("should add spellcheck target to project configuration by default", async () => {
+    await configureSpellcheckGenerator(tree, options);
+    const projects = getProjects(tree);
+    const project = projects.get("test");
+
+    expect(project.targets.spellcheck).toBeDefined();
+    expect(project.targets.spellcheck.executor).toBe(
+      "@right-click-code/nx-spellcheck:spellcheck"
+    );
+    expect(project.targets.spellcheck.options).toEqual({});
+  });
+
+  it("should not add spellcheck target when skipTarget is true", async () => {
+    await configureSpellcheckGenerator(tree, { ...options, skipTarget: true });
+    const projects = getProjects(tree);
+    const project = projects.get("test");
+
+    expect(project.targets.spellcheck).toBeUndefined();
   });
 });
