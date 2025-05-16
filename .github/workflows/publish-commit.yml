@@ -1,5 +1,12 @@
 name: Publish Any Commit
-on: [push, pull_request]
+
+on:
+  pull_request:
+  push:
+    branches:
+      - "**"
+    tags:
+      - "!**"
 permissions:
   contents: read
 
@@ -19,11 +26,9 @@ jobs:
           cache: "pnpm"
 
       - name: Install dependencies
-        run: pnpm install --frozen-lockfile
-
-      - uses: nrwl/nx-set-shas@v4
+        run: pnpm install --ignore-scripts --frozen-lockfile
 
       - name: Build
-        run: pnpm exec nx affected -t build
+        run: pnpm exec nx build plugins-spellcheck
 
-      - run: pnpm dlx pkg-pr-new publish './libs/plugins/spellcheck'
+      - run: pnpm dlx pkg-pr-new publish './dist/libs/plugins/spellcheck'
