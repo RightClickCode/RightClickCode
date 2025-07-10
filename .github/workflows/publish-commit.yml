@@ -31,4 +31,4 @@ jobs:
       - name: Build
         run: pnpm exec nx build plugins-spellcheck
 
-      - run: pnpm dlx pkg-pr-new publish './dist/libs/plugins/spellcheck'
+      - run: pnpm dlx pkg-pr-new publish './dist/packages/plugins/spellcheck'

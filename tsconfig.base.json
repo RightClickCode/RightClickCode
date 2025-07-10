@@ -16,7 +16,7 @@
     "baseUrl": ".",
     "paths": {
       "@right-click-code/nx-spellcheck": [
-        "libs/plugins/spellcheck/src/index.ts"
+        "packages/plugins/spellcheck/src/index.ts"
       ]
     }
   },
